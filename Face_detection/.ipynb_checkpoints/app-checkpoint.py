@@ -10,7 +10,7 @@ from flask import Flask,jsonify
 from face_detection import Model
 
 
-retina_path = '/home/kakarot/Mask_detection/Face_detection_server2/models/retinaface/R50'
+retina_path = './models/retinaface/R50'
 req_add = 'http://127.0.0.1:3000/'
 save_path = 'to_serve_files/output.avi'
 model = Model(retina_path,req_add)
@@ -61,7 +61,7 @@ def index():
         fname,ext=os.path.splitext(content.filename)
         #print("extension",ext)
         #main_ext = ext
-        print(ext)
+#         print(ext)
         content.save("current_file"+ext)
         video_path = 'current_file'+ext
         if ext.lower() in all_video_formats:

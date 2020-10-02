@@ -17,11 +17,11 @@ from sklearn.decomposition import PCA
 from time import sleep
 from easydict import EasyDict as edict
 # from mtcnn_detector import MtcnnDetector
-sys.path.append(os.path.join('/home/kakarot/Mask_detection/Face_detction_server2', 'src', 'common'))
+sys.path.append(os.path.join('.', 'src', 'common'))
 import face_image
 import face_preprocess
-sys.path.append('/home/kakarot/Mask_detection/Face_detection_server2/')
-sys.path.append('/home/kakarot/Mask_detection/Face_detection_server2/RetinaFace/')
+sys.path.append('.')
+sys.path.append('./RetinaFace/')
 from RetinaFace.retinaface import RetinaFace
 import time
 import random
