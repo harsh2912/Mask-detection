@@ -116,7 +116,7 @@ class Model:
 #         org_h,org_w = fr.shape[:2]
 #         fr = imutils.resize(fr,width=720)
         faces , keypoints , bboxes = self.get_face_patch(fr)
-        if not len(faces)==0:s
+        if not len(faces)==0:
             encoded_arr = pickle.dumps(faces)
             output = self.check_mask(encoded_arr)
             
