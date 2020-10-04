@@ -17,11 +17,11 @@ from sklearn.decomposition import PCA
 from time import sleep
 from easydict import EasyDict as edict
 # from mtcnn_detector import MtcnnDetector
-sys.path.append(os.path.join('.', 'src', 'common'))
+sys.path.append(os.path.join('./Face_detection', 'src', 'common'))
 import face_image
 import face_preprocess
-sys.path.append('.')
-sys.path.append('./RetinaFace/')
+sys.path.append('./Face_detection')
+sys.path.append('./Face_detection/RetinaFace/')
 from RetinaFace.retinaface import RetinaFace
 import time
 import random
@@ -51,7 +51,7 @@ def get_padded_image(img):
 
 
 class Model:
-    def __init__(self,retina_path,request_add,det_threshold=0.7):
+    def __init__(self,retina_path,request_add,det_threshold=0.8):
         self.detector = RetinaFace(retina_path,0, ctx_id=0)
         self.request_add = request_add
         self.det_threshold = det_threshold
@@ -106,14 +106,17 @@ class Model:
         
     def generate_image(self,read_path,write_path):
         fr = cv2.imread(read_path)
+        if fr is None:
+            print('Invalid Image')
+            return
         fr = self._infer_on_frame(fr)
-        plt.imsave(write_path,fr[...,::-1])
+        plt.imsave(write_path,fr[:,:,::-1])
         
     def _infer_on_frame(self,fr):
-        org_h,org_w = fr.shape[:2]
-        fr = imutils.resize(fr,width=720)
-        faces , keypoints , bboxes = self.get_face_patch(fr[...,::-1])
-        if not len(faces)==0:
+#         org_h,org_w = fr.shape[:2]
+#         fr = imutils.resize(fr,width=720)
+        faces , keypoints , bboxes = self.get_face_patch(fr)
+        if not len(faces)==0:s
             encoded_arr = pickle.dumps(faces)
             output = self.check_mask(encoded_arr)
             
@@ -126,5 +129,5 @@ class Model:
                     color = (0,0,255)
                 #color = (0,255,0)
                 fr = cv2.rectangle(fr.copy(),(x1,y1),(x2,y2),color,2)
-        fr = cv2.resize(fr.copy(),(org_w,org_h))
+#         fr = cv2.resize(fr.copy(),(org_w,org_h))
         return fr

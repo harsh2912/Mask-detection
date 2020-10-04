@@ -13,6 +13,7 @@ class maskModel:
     def check_mask(self,faces):
         tensor = torch.from_numpy(faces.astype(np.float32)).permute(0,3,1,2).to(torch.device(self.device))
         tensor = self.learn.data.train_dl.tfms[0]((tensor,torch.ones(len(tensor))))[0]
+        print(tensor.max())
         with torch.no_grad():
             out = self.learn.pred_batch(DatasetType.Test,batch=(tensor,torch.ones(len(tensor))))
         #print(out[1].item())
