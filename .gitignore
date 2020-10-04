@@ -1,5 +1,7 @@
 Face_detection/extras/
-Face_detection/models/
+Face_detection/models/insightface/*
+Face_detection/models/retinaface/*
+Face_detection/models/retinaface-R50.zip
 Face_detection/model-r*
 Mask_classification/model/
 Face_detection/gender-age/
