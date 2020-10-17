@@ -8,6 +8,9 @@ Please read my article [here](https://medium.com/@harshshrm94/mask-detection-usi
 
 ## How To Use
 * Clone this repo.
+* Download models from [here](https://drive.google.com/drive/folders/1G6-UJuLdDPybbk-4Z3829kQNzN8bhbIj?usp=sharing)
+* Make a directory "models/retinaface" inside Face_detection folder and extract "retinaface-R50.zip" in that folder and maake a directory "model" inside Mask_classification folder and put "model_clean_data.pkl" in that folder.
+* cd loc/Mask-detection/Face_detection
 * Create the conda environment using the following command :
 ```
 conda env create -n social_distancing -f environment.yml
