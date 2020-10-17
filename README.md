@@ -4,7 +4,7 @@
 
 ## Details about this repo
 
-Please read my article [here](https://medium.com/p/b30f138b0bc3/edit), which has explanation about how this is working and how it can be improved further
+Please read my article [here](https://medium.com/@harshshrm94/mask-detection-using-deep-learning-2958503d42b1), which has an explanation about how to detect mask given a video feed
 
 ## How To Use
 * Clone this repo.
