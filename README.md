@@ -1,6 +1,6 @@
 # Mask Detection
 
-<img src="gif/output.gif" width="300"/> 
+<img src="1_huh2tZKYK3TwAulj_kUUqg.jpeg" width="300"/> 
 
 ## Details about this repo
 
