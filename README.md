@@ -43,4 +43,4 @@ cd loc/Mask-detection
 python infer.py --is_image True --in_path path/to/image --out_path path/to/save
 ```
 
-You can also go through my blog [here], where I have explained each step of implementation.
+You can also go through my blog [here](https://medium.com/@harshshrm94/mask-detection-using-deep-learning-part-ii-ab7a2cb6aaf1), where I have explained each step of implementation.
